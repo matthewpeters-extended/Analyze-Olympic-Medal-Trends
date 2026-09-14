@@ -1,0 +1,43 @@
+{
+  "athlete_games_pairs": 187452,
+  "female_share_summer": {
+    "1896": 0.0,
+    "1900": 1.9,
+    "1936": 8.1,
+    "1976": 20.7,
+    "1996": 34.0,
+    "2016": 45.0
+  },
+  "female_share_summer_2016": 45.0,
+  "female_share_winter_first": 4.2,
+  "female_share_winter_last": 40.1,
+  "figures": [
+    "events_by_sex.png",
+    "female_share.png",
+    "nations_growth.png",
+    "participation_growth.png"
+  ],
+  "first_games_with_women": "1900 Summer",
+  "games_to_reach_25pct_female_summer": 1988,
+  "nations_1972_summer": 121,
+  "nations_1976_summer": 92,
+  "nations_1980_summer": 80,
+  "nations_1984_summer": 140,
+  "raw_rows": 271116,
+  "row_to_athlete_inflation": 1.45,
+  "share_gap_summer_2016": 0.6,
+  "summer_athlete_growth_factor": 63.5,
+  "summer_athletes_1896": 176,
+  "summer_athletes_2016": 11179,
+  "summer_events_1896": 43,
+  "summer_events_2016": 306,
+  "summer_games_count": 29,
+  "summer_mean_share_gap_1960_1992_pp": 5.8,
+  "summer_nations_1896": 12,
+  "summer_nations_2016": 205,
+  "winter_games_count": 22,
+  "winter_mean_share_gap_1960_1992_pp": 13.5,
+  "winter_peak_share_gap_pp": 17.0,
+  "winter_peak_share_gap_year": 1964,
+  "women_event_share_summer_2016": 44.4
+}

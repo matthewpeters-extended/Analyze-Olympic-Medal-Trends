@@ -106,14 +106,33 @@ Apply the five fixes above. Outputs: `data/processed/athletes.parquet` at athlet
 Writes `docs/phase1_cleaning.json` with every row count before and after each fix.
 Tests in `tests/` assert the grain of each output and that no medal is double counted.
 
-### Phase 2: participation trends
+### Phase 2: participation trends (done)
 
-Athletes per Games, countries per Games, sports and events per Games, and the female share
-of athletes over time. The headline series measured on the raw file: female share of Summer
-athletes is 1.7 percent in 1900, 7.2 percent in 1936, 25.1 percent in 1976, 36.3 percent in
-1996, and 45.5 percent in 2016. Summer and Winter are reported separately throughout,
-because the two calendars diverge after 1992.
-Figures: participation growth, female share over time, events per Games.
+Athletes per Games, committees per Games, sports and events per Games, and the female share
+of athletes over time. Summer and Winter are reported separately throughout, because the
+two calendars diverge after 1992.
+
+A sixth defect surfaced here and is fixed in the same spirit as the other five. The raw
+file has 271,116 rows but only 187,452 athlete by Games pairs, because an athlete entered
+in four events appears four times. Counting rows overstates participation by a factor of
+1.45 and biases it towards the sports that let one competitor enter many events. Every
+count in this phase is of distinct athletes within a Games, which also moves the female
+share figures off the row based numbers quoted when this plan was first written.
+
+Measured: Summer participation went from 176 athletes and 12 committees in 1896 to 11,179
+athletes and 205 committees in 2016. The female share of Summer athletes went from zero in
+1896 to 1.9 percent in 1900, 8.1 percent in 1936, 20.7 percent in 1976, 34.0 percent in
+1996 and 45.0 percent in 2016.
+
+The finding worth the figure is a gap rather than a level. The share of events open to
+women ran ahead of the share of women actually competing for about thirty years. In the
+Winter Games the gap peaked at 17.0 points in 1964, when women were 35 percent of the
+programme and 18 percent of the field, and it averaged 13.5 points from 1960 to 1992
+against 5.8 points in the Summer Games. By 2016 the Summer gap had closed and slightly
+reversed. The programme opened faster than the field filled.
+
+Outputs: `docs/phase2_participation.json`, `reports/participation_by_games.csv`, and four
+figures in `reports/figures`. 11 tests in `tests/test_phase2.py`.
 
 ### Phase 3: medal concentration
 
