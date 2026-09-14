@@ -24,13 +24,19 @@ actually awarded. That figure is 47 higher than the dedupe every public notebook
 dataset uses, because collapsing on country and medal also throws away the cases where one
 country won two of the same medal in one event. `PLAN.md` lists all five defects.
 
-## A figure from the work so far
+## Two figures from the work so far
 
 ![Share of women among Olympic athletes and among Olympic events, Summer and Winter, 1896 to 2016](reports/figures/female_share.png)
 
 The share of events open to women ran ahead of the share of women actually competing for
 about thirty years. In the Winter Games that gap peaked at 17.0 points in 1964. By 2016 the
 Summer gap had closed and slightly reversed.
+
+![Effective number of medal winning countries at the Summer Games, as recorded and with the Soviet, Yugoslav and Czechoslovak successor states recombined](reports/figures/fragmentation_counterfactual.png)
+
+Medals look like they spread more than twice as wide after 1992. Put the successor states
+back together and 57 percent of that broadening disappears. The usual telling of this
+dataset quotes the uncorrected number.
 
 ## Data
 
@@ -56,8 +62,8 @@ provenance chain and `docs/SETUP.md` to reproduce the environment.
 <tr><td>Phase 0</td><td>scaffold, environment, data acquisition</td><td>done</td></tr>
 <tr><td>Phase 1</td><td>cleaning and the NOC to country map</td><td>done</td></tr>
 <tr><td>Phase 2</td><td>participation trends</td><td>done</td></tr>
-<tr><td>Phase 3</td><td>medal concentration</td><td>next</td></tr>
-<tr><td>Phase 4</td><td>host advantage</td><td>pending</td></tr>
+<tr><td>Phase 3</td><td>medal concentration</td><td>done</td></tr>
+<tr><td>Phase 4</td><td>host advantage</td><td>next</td></tr>
 <tr><td>Phase 5</td><td>forecast against a persistence baseline</td><td>pending</td></tr>
 <tr><td>Phase 6</td><td>write up</td><td>pending</td></tr>
 </table>

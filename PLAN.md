@@ -134,13 +134,47 @@ reversed. The programme opened faster than the field filled.
 Outputs: `docs/phase2_participation.json`, `reports/participation_by_games.csv`, and four
 figures in `reports/figures`. 11 tests in `tests/test_phase2.py`.
 
-### Phase 3: medal concentration
+### Phase 3: medal concentration (done)
 
-Top 5 share of medals per Games and a Herfindahl Hirschman Index per Games, computed on the
-event grain table. Expected structure: the Cold War bloc era, the 1980 and 1984 boycotts,
-and the post 1992 fragmentation as the Soviet successor states enter separately. These are
-treated as structural breaks to be located in the data, not as anecdotes to illustrate.
-Figures: concentration over time with the boycott years annotated.
+Top 5 share and a Herfindahl Hirschman index per Games, computed on the event grain medal
+table, reported as the effective number of medal winning countries, meaning one over the
+index. Breaks were located rather than assumed: `src/changepoint.py` does binary
+segmentation with a BIC penalty, searching every split point. It finds nothing in noise and
+nothing in a constant series, which is asserted in the tests.
+
+One scaling decision is worth recording. Run on the Herfindahl index itself the search puts
+every break in the first decade, because the index is bounded and its early values are so
+extreme that they dominate a squared error criterion. Run on the effective number of
+countries, which is the interpretable quantity and roughly linear in scale, it finds the
+structure below.
+
+Three Summer regimes:
+
+<table>
+<tr><td>1896 to 1908</td><td>4.0 effective countries</td><td>the founding era, tiny travelling fields</td></tr>
+<tr><td>1912 to 1992</td><td>10.6 effective countries</td><td>18 Games, unbroken</td></tr>
+<tr><td>1996 to 2016</td><td>22.9 effective countries</td><td>medals spread more than twice as wide</td></tr>
+</table>
+
+The headline is what is missing. The Cold War is not a break. Two world wars, the entire
+Soviet era, and both boycotts sit inside one 80 year regime. The break comes in 1996, four
+years after the Soviet Union dissolved, and the 1992 Games still belongs to the old regime.
+
+The second finding is a correction to the first. Recombining the Soviet, Yugoslav and
+Czechoslovak successor states into one competitor each, the way they entered before 1992,
+the modern mean falls from 22.9 to 15.9. The rise from the plateau is 12.3 as recorded and
+5.3 once the redefinition is undone, so **57 percent of the apparent broadening is
+bookkeeping**, not more countries winning. That counterfactual is the single most useful
+thing in this phase, because the uncorrected number is what gets quoted.
+
+On the boycotts: a boycott raises concentration only when it thins the field. Moscow 1980
+left 80 nations and the effective number fell to 6.6, well below the regime mean, with the
+Soviet Union taking 30.9 percent of the medals. Los Angeles 1984 left 140 nations and
+landed at 10.3, indistinguishable from the regime mean.
+
+Outputs: `docs/phase3_concentration.json`, `reports/concentration_by_games.csv`, four
+figures, and 15 tests in `tests/test_phase3.py` covering both the findings and the break
+finder itself.
 
 ### Phase 4: host advantage
 

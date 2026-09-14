@@ -1,0 +1,82 @@
+{
+  "figures": [
+    "bloc_shares.png",
+    "concentration_regimes.png",
+    "fragmentation_counterfactual.png",
+    "top5_share.png"
+  ],
+  "los_angeles_1984_effective": 10.3,
+  "los_angeles_1984_leader_share": 25.3,
+  "medals_analysed": 18568,
+  "modern_mean_effective": 22.9,
+  "modern_mean_effective_remerged": 15.9,
+  "moscow_1980_effective": 6.6,
+  "moscow_1980_leader_share": 30.9,
+  "pct_of_rise_that_is_redefinition": 57,
+  "plateau_mean_effective": 10.6,
+  "plateau_span_games": 18,
+  "rise_actual": 12.3,
+  "rise_after_remerging": 5.3,
+  "st_louis_1904_effective": 1.5,
+  "st_louis_1904_leader_share": 82.7,
+  "st_louis_1904_winners": 12,
+  "summer_break_years": [
+    1912,
+    1996
+  ],
+  "summer_regimes": [
+    {
+      "from_year": 1896,
+      "games_count": 4,
+      "mean_effective_countries": 4.0,
+      "to_year": 1908
+    },
+    {
+      "from_year": 1912,
+      "games_count": 18,
+      "mean_effective_countries": 10.6,
+      "to_year": 1992
+    },
+    {
+      "from_year": 1996,
+      "games_count": 6,
+      "mean_effective_countries": 22.9,
+      "to_year": 2016
+    }
+  ],
+  "top5_share_1896": 81.5,
+  "top5_share_2016": 36.7,
+  "winners_1896": 10,
+  "winners_2016": 85,
+  "winter_break_years": [
+    1948,
+    1992,
+    2006
+  ],
+  "winter_regimes": [
+    {
+      "from_year": 1924,
+      "games_count": 4,
+      "mean_effective_countries": 5.7,
+      "to_year": 1936
+    },
+    {
+      "from_year": 1948,
+      "games_count": 11,
+      "mean_effective_countries": 8.8,
+      "to_year": 1988
+    },
+    {
+      "from_year": 1992,
+      "games_count": 4,
+      "mean_effective_countries": 12.1,
+      "to_year": 2002
+    },
+    {
+      "from_year": 2006,
+      "games_count": 3,
+      "mean_effective_countries": 14.6,
+      "to_year": 2014
+    }
+  ]
+}

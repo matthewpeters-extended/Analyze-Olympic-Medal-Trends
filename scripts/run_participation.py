@@ -34,6 +34,10 @@ PROCESSED = ROOT / "data" / "processed"
 FIGURES = ROOT / "reports" / "figures"
 REPORT = ROOT / "docs" / "phase2_participation.json"
 
+# The figures this phase writes. Listed rather than globbed, so that a figure
+# from another phase cannot wander into this phase's report.
+FIGURE_NAMES = ['events_by_sex.png', 'female_share.png', 'nations_growth.png', 'participation_growth.png']
+
 SOURCE = "Source: 271,116 Olympic athlete records, 1896 to 2016."
 
 
@@ -245,8 +249,13 @@ def main() -> int:
         "nations_1972_summer": int(summer.loc[1972, "nations"]),
         "summer_games_count": int((table["season"] == "Summer").sum()),
         "winter_games_count": int((table["season"] == "Winter").sum()),
-        "figures": sorted(path.name for path in FIGURES.glob("*.png")),
+        "figures": FIGURE_NAMES,
     }
+
+    missing = [figure for figure in FIGURE_NAMES if not (FIGURES / figure).exists()]
+    if missing:
+        print(f"FAILED: figures not written: {missing}")
+        return 1
 
     REPORT.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
 

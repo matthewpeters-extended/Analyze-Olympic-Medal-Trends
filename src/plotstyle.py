@@ -21,6 +21,8 @@ Rules applied here, and worth keeping if you add a chart:
 
 from __future__ import annotations
 
+import textwrap
+
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -30,6 +32,7 @@ INK = "#0b0b0b"
 INK_SOFT = "#52514e"
 INK_FAINT = "#8a8985"
 GRID = "#e6e5e1"
+BAND = "#f2f1ee"
 
 BLUE = "#2a78d6"
 ORANGE = "#eb6834"
@@ -81,9 +84,14 @@ def tidy(ax, ylabel: str = "", grid: bool = True) -> None:
     ax.tick_params(length=0)
 
 
-def caption(fig, text: str) -> None:
-    """One line of source or method note under the plot."""
-    fig.text(0.0, -0.02, text, ha="left", va="top", fontsize=9, color=INK_FAINT)
+def caption(fig, text: str, width: int = 110) -> None:
+    """Source or method note under the plot.
+
+    Wrapped, because savefig with a tight bounding box will widen the whole canvas
+    to fit a long single line of text and quietly stretch the figure.
+    """
+    fig.text(0.0, -0.02, textwrap.fill(" ".join(text.split()), width),
+             ha="left", va="top", fontsize=9, color=INK_FAINT, linespacing=1.4)
 
 
 def label_end(ax, x, y, text: str, color: str, dx: float = 1.5, dy: float = 0.0) -> None:
