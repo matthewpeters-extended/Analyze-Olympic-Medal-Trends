@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+data/
+# Figures ARE tracked. They are deliverables: the README embeds them and recruiters
+# read the README on GitHub, where an untracked image renders as a broken link.
+.ipynb_checkpoints/
