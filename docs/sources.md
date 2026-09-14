@@ -46,8 +46,8 @@ data belongs to Randi H Griffin.
 ## Data we build ourselves
 
 <table>
-<tr><td><code>data/raw/noc_country_map.csv</code></td><td>NOC code to modern country, with a successor rule and a written justification per row. The Kaggle companion file <code>noc_regions.csv</code> is not mirrored publicly, so this is built by hand in Phase 1.</td></tr>
-<tr><td><code>data/raw/host_nations.csv</code></td><td>Games to host NOC, derived from the <code>city</code> column and checked by hand. Needed for the host advantage analysis in Phase 4.</td></tr>
+<tr><td><code>reference/noc_country_map.csv</code></td><td>NOC code to modern country, with a successor rule and a written justification per row. The Kaggle companion file <code>noc_regions.csv</code> is not mirrored publicly, so this is built by hand in Phase 1. Lives in <code>reference/</code> and not under <code>data/</code>, because <code>data/</code> is git ignored and these decisions have to travel with the repository.</td></tr>
+<tr><td><code>reference/host_nations.csv</code></td><td>Games to host NOC, derived from the <code>city</code> column and checked by hand. Needed for the host advantage analysis in Phase 4.</td></tr>
 </table>
 
 ## Not used

@@ -19,8 +19,10 @@ Committees, 66 sports and 765 events. It answers four questions:
 
 The point of the project is the handling rather than the plotting. Five defects in this
 dataset are measured and fixed before anything is charted, the largest being that team
-medals are stored once per athlete: 39,783 athlete medal rows collapse to 18,905 real
-medal events. `PLAN.md` lists all five.
+medals are stored once per athlete: 39,783 athlete medal rows collapse to 18,952 medals
+actually awarded. That figure is 47 higher than the dedupe every public notebook on this
+dataset uses, because collapsing on country and medal also throws away the cases where one
+country won two of the same medal in one event. `PLAN.md` lists all five defects.
 
 ## Data
 
@@ -34,6 +36,7 @@ provenance chain and `docs/SETUP.md` to reproduce the environment.
 <tr><td><code>docs/</code></td><td>sources, setup, and one machine readable report per phase</td></tr>
 <tr><td><code>notebooks/</code></td><td>numbered analysis notebooks</td></tr>
 <tr><td><code>scripts/</code></td><td>data download, checks, and the phase push helper</td></tr>
+<tr><td><code>reference/</code></td><td>hand made lookup tables: NOC to country, and host nation per Games</td></tr>
 <tr><td><code>src/</code></td><td>reusable code the notebooks import</td></tr>
 <tr><td><code>reports/figures/</code></td><td>figures, tracked in git because the README embeds them</td></tr>
 <tr><td><code>tests/</code></td><td>assertions on data grain and on evaluation discipline</td></tr>
@@ -43,8 +46,8 @@ provenance chain and `docs/SETUP.md` to reproduce the environment.
 
 <table>
 <tr><td>Phase 0</td><td>scaffold, environment, data acquisition</td><td>done</td></tr>
-<tr><td>Phase 1</td><td>cleaning and the NOC to country map</td><td>next</td></tr>
-<tr><td>Phase 2</td><td>participation trends</td><td>pending</td></tr>
+<tr><td>Phase 1</td><td>cleaning and the NOC to country map</td><td>done</td></tr>
+<tr><td>Phase 2</td><td>participation trends</td><td>next</td></tr>
 <tr><td>Phase 3</td><td>medal concentration</td><td>pending</td></tr>
 <tr><td>Phase 4</td><td>host advantage</td><td>pending</td></tr>
 <tr><td>Phase 5</td><td>forecast against a persistence baseline</td><td>pending</td></tr>

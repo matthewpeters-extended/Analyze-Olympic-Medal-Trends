@@ -44,11 +44,22 @@ Every item below was measured on the raw file before this plan was written.
 ### 1. Team medals are counted once per athlete
 
 A team gold appears as one row per squad member. At athlete grain there are 39,783 medal
-rows; collapsed to the true grain of (games, event, medal, noc) there are 18,905. Public
-notebooks on this dataset routinely report the inflated figure and call it a medal table.
+rows. The usual fix is to drop duplicates on (games, event, medal, noc), which gives
+18,905 and is wrong in one direction: it also collapses the cases where one country
+legitimately won two of the same medal in the same event. Two bronzes are awarded in
+boxing, judo and wrestling, and ties for a place were common in the early Games. Athens
+1896 alone has two American silvers in the men's high jump.
 
-Fix: build `data/processed/medals.parquet` at the event grain, and state both numbers in
-the README so the difference is visible rather than hidden.
+Fix: classify each event instance first. If the median size of its (medal, noc) groups is
+2 or more it is a team event and collapses to one medal; otherwise it is an individual
+event and every row is its own medal. The median is what makes the rule robust, since it
+survives both an individual event with a tie and a team event with a one member squad.
+Checked against a list of known team and individual events, it disagrees exactly once, on
+the 1900 mixed doubles in tennis, where the pairs genuinely were made of players from
+different countries and per athlete counting is the right answer.
+
+Result: **18,952 medals actually awarded**, 47 more than the naive rule finds and 2.1
+times fewer than the raw row count. Both figures go in the README so the gap is visible.
 
 ### 2. The 1906 Intercalated Games are present
 
@@ -64,7 +75,7 @@ medal counts. Fix: same treatment as 1906, flagged rather than silently dropped.
 
 URS 5,685 rows, GDR 2,645, FRG 3,315, EUN 864, plus Czechoslovakia, Yugoslavia, Serbia and
 Montenegro, and the mixed teams of the early Games. Any country trend line is meaningless
-until this is resolved. Fix: hand written `data/raw/noc_country_map.csv` with one row per
+until this is resolved. Fix: hand written `reference/noc_country_map.csv` with one row per
 NOC code, a modern country assignment, a successor rule, and a free text justification.
 The default rule is continuity of the National Olympic Committee, not of the state, and
 where the two disagree the analysis reports both.
@@ -91,7 +102,7 @@ excluded from git, `scripts/check_prose.py` and `scripts/verify_readme.py` and
 ### Phase 1: clean and map
 
 Apply the five fixes above. Outputs: `data/processed/athletes.parquet` at athlete grain,
-`data/processed/medals.parquet` at event grain, `data/raw/noc_country_map.csv`.
+`data/processed/medals.parquet` at event grain, `reference/noc_country_map.csv`.
 Writes `docs/phase1_cleaning.json` with every row count before and after each fix.
 Tests in `tests/` assert the grain of each output and that no medal is double counted.
 

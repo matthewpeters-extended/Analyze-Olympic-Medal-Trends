@@ -1,0 +1,41 @@
+{
+  "athlete_medal_rows": 39783,
+  "event_instances": 6168,
+  "inflation_factor_of_raw_medal_rows": 2.1,
+  "largest_team_size": 38,
+  "medal_type_counts": {
+    "Bronze": 6567,
+    "Gold": 6209,
+    "Silver": 6176
+  },
+  "medals_art_competitions": 156,
+  "medals_awarded": 18952,
+  "medals_from_individual_events": 14238,
+  "medals_from_team_events": 4714,
+  "medals_ioc_recognised": 18573,
+  "medals_recovered_over_naive_dedupe": 47,
+  "missing_pct": {
+    "age": 3.5,
+    "height": 22.2,
+    "weight": 23.2
+  },
+  "naive_dedupe_medals": 18905,
+  "noc_status_counts": {
+    "active": 206,
+    "dissolved": 21,
+    "non_country": 3
+  },
+  "nocs_rolled_up": 15,
+  "raw_athletes": 135571,
+  "raw_events": 765,
+  "raw_games": 51,
+  "raw_nocs": 230,
+  "raw_rows": 271116,
+  "raw_sports": 66,
+  "raw_year_max": 2016,
+  "raw_year_min": 1896,
+  "rows_1906": 1733,
+  "rows_art_competitions": 3578,
+  "rows_not_ioc_recognised": 5311,
+  "team_event_instances": 1571
+}
