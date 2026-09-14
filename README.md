@@ -24,7 +24,7 @@ actually awarded. That figure is 47 higher than the dedupe every public notebook
 dataset uses, because collapsing on country and medal also throws away the cases where one
 country won two of the same medal in one event. `PLAN.md` lists all five defects.
 
-## Two figures from the work so far
+## Three figures from the work so far
 
 ![Share of women among Olympic athletes and among Olympic events, Summer and Winter, 1896 to 2016](reports/figures/female_share.png)
 
@@ -37,6 +37,15 @@ Summer gap had closed and slightly reversed.
 Medals look like they spread more than twice as wide after 1992. Put the successor states
 back together and 57 percent of that broadening disappears. The usual telling of this
 dataset quotes the uncorrected number.
+
+![Every Olympic hosting event since 1896, ordered by the lift in the host's own medal share, Summer and Winter](reports/figures/host_lift_ordered.png)
+
+Hosting raises a country's medal share by a median of 2.9 percentage points, 95 percent
+confidence interval 1.8 to 4.0. Only 4 of 45 hosting events with a usable baseline go the
+other way. This is a within country design, comparing each host only to its own record
+in neighbouring Games, so it cannot be confounded by which countries are generally good
+at the Olympics. What it cannot rule out is reverse causality: a country often invests
+more in its athletes around the time it wins the right to host.
 
 ## Data
 
@@ -63,8 +72,8 @@ provenance chain and `docs/SETUP.md` to reproduce the environment.
 <tr><td>Phase 1</td><td>cleaning and the NOC to country map</td><td>done</td></tr>
 <tr><td>Phase 2</td><td>participation trends</td><td>done</td></tr>
 <tr><td>Phase 3</td><td>medal concentration</td><td>done</td></tr>
-<tr><td>Phase 4</td><td>host advantage</td><td>next</td></tr>
-<tr><td>Phase 5</td><td>forecast against a persistence baseline</td><td>pending</td></tr>
+<tr><td>Phase 4</td><td>host advantage</td><td>done</td></tr>
+<tr><td>Phase 5</td><td>forecast against a persistence baseline</td><td>next</td></tr>
 <tr><td>Phase 6</td><td>write up</td><td>pending</td></tr>
 </table>
 

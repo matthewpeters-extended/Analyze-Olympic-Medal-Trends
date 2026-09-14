@@ -4,5 +4,6 @@ pyarrow
 matplotlib
 seaborn
 scikit-learn
+scipy
 jupyter
 pytest

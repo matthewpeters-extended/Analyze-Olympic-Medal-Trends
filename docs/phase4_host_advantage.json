@@ -1,0 +1,59 @@
+{
+  "extreme_case": {
+    "games": "1904 Summer",
+    "host": "USA",
+    "lift_pp": 65.4,
+    "note": "almost no international field travelled to St Louis; see the concentration figures in Phase 3"
+  },
+  "figures": [
+    "host_lift_ordered.png",
+    "host_era_comparison.png"
+  ],
+  "hosting_events_clean": 45,
+  "hosting_events_edge_case": 5,
+  "hosting_events_total": 50,
+  "mean_lift_pp": 6.8,
+  "median_lift_by_season": {
+    "Summer": 3.0,
+    "Winter": 2.9
+  },
+  "median_lift_ci95": [
+    1.8,
+    4.0
+  ],
+  "median_lift_early": 10.0,
+  "median_lift_modern": 1.8,
+  "median_lift_modern_ci95": [
+    1.6,
+    2.9
+  ],
+  "median_lift_pp": 2.9,
+  "modern_events": 31,
+  "modern_negative_lift_count": 3,
+  "negative_lift_count": 4,
+  "negative_lift_events": [
+    {
+      "games": "1976 Summer",
+      "host": "CAN",
+      "lift_pp": -0.59
+    },
+    {
+      "games": "1928 Winter",
+      "host": "SUI",
+      "lift_pp": -2.2
+    },
+    {
+      "games": "1976 Winter",
+      "host": "AUT",
+      "lift_pp": -0.16
+    },
+    {
+      "games": "1988 Winter",
+      "host": "CAN",
+      "lift_pp": -0.51
+    }
+  ],
+  "std_lift_pp": 11.6,
+  "wilcoxon_p_value": 4.249654371709886e-08,
+  "wilcoxon_p_value_modern": 3.7478706174935684e-06
+}
